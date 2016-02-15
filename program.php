@@ -2,7 +2,7 @@
 
   include("cbumobileConnection.php");
 
-  $schoolname=$_GET['schoolName'];
+  $schoolname=urldecode($_GET['schoolName']);
   $schoolName=filter_var($schoolname, FILTER_SANITIZE_STRING);
 
   $getSchoolId="SELECT SchoolCode
