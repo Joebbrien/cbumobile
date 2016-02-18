@@ -4,10 +4,10 @@ include_once"cbumobileConnection.php";
 
 #Get events from  the application
 
-$eventtitle=$_GET['eventTitle'];
-$eventdescription=$_GET['eventDescription'];
-$eventDate=$_GET['eventDate'];
-$eventvenue=$_GET['eventVenue'];
+$eventtitle=urldecode($_GET['eventTitle']);
+$eventdescription=urldecode($_GET['eventDescription']);
+$eventDate=urldecode($_GET['eventDate']);
+$eventvenue=urldecode($_GET['eventVenue']);
 
 $eventTitle=filter_var($eventtitle,FILTER_SANITIZE_STRING);
 $eventDescription=filter_var($eventdescription, FILTER_SANITIZE_STRING);
