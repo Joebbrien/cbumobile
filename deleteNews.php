@@ -13,7 +13,7 @@ if(isset($stm)){
    mysqli_stmt_execute($stm);
     
   if(mysqli_affected_rows($connection) > 0){
-        mysqli_stmt_close($_GLOBALS['$stm']);
+        mysqli_stmt_close($stm);
         $status="Success";
         $message="Selected news has been deleted";
         sendinformation($status,$message);
@@ -26,7 +26,7 @@ if(isset($stm)){
     }
 
 }else{
- mysqli_stmt_close($_GLOBALS['$stm']);
+ mysqli_stmt_close($stm);
  $status="Fail";
  $message="Problem with preparing a statement.";
  sendinformation($status,$message);
@@ -42,5 +42,4 @@ function sendinformation($status, $message){
 
 }
   
-
 ?>
